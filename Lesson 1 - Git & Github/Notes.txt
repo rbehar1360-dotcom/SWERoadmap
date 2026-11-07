@@ -1,0 +1,297 @@
+Here is a list of git commands that seem to be important
+and a rudementary description of each:
+    ==================================================
+    GIT COMMAND CHEAT SHEET — SWE REFERENCE
+    ==================================================
+
+    GIT BASICS
+    --------------------------------------------------
+    git --version
+    Version — Displays installed Git version.
+
+    git help
+    Help — Displays Git documentation.
+
+    git status
+    Status — Shows modified, staged, and untracked files.
+
+    git init
+    Initialize — Creates a new Git repository.
+
+    git clone <repository-url>
+    Clone — Downloads an existing repository.
+
+    git config --list
+    Configuration — Displays Git settings.
+
+    git config --global user.name "Your Name"
+    Configure Name — Sets your commit author name.
+
+    git config --global user.email "you@example.com"
+    Configure Email — Sets your commit author email.
+
+
+    STAGING & COMMITTING
+    --------------------------------------------------
+    git add <filename>
+    Add — Stages a specific file.
+
+    git add .
+    Add All — Stages changes in the current directory.
+
+    git add -A
+    Add All — Stages all changes across the repository.
+
+    git commit -m "message"
+    Commit — Saves staged changes as a commit.
+
+    git commit -am "message"
+    Commit All Modified — Stages and commits tracked-file modifications.
+
+    git commit --amend
+    Amend — Modifies the latest commit.
+
+    git log
+    Log — Displays commit history.
+
+    git log --oneline
+    One-Line Log — Displays compact commit history.
+
+    git log --graph --oneline --all
+    Graph Log — Displays commit history as a branch graph.
+
+
+    BRANCHING & MERGING
+    --------------------------------------------------
+    git branch
+    Branch — Lists local branches.
+
+    git branch <branch-name>
+    Create Branch — Creates a new branch.
+
+    git branch -a
+    All Branches — Lists local and remote-tracking branches.
+
+    git branch -d <branch-name>
+    Delete Branch — Deletes a merged local branch.
+
+    git branch -D <branch-name>
+    Force Delete Branch — Deletes a branch even if unmerged.
+
+    git switch <branch-name>
+    Switch — Switches to another branch.
+
+    git switch -c <branch-name>
+    Switch Create — Creates and switches to a new branch.
+
+    git merge <branch-name>
+    Merge — Combines another branch into your current branch.
+
+    git merge --abort
+    Abort Merge — Cancels a merge in progress.
+
+
+    REMOTE REPOSITORIES & GITHUB
+    --------------------------------------------------
+    git remote -v
+    Remote Verbose — Displays connected remote repositories.
+
+    git remote add origin <repository-url>
+    Remote Add — Connects your local repository to a remote.
+
+    git remote remove origin
+    Remote Remove — Removes a remote connection.
+
+    git fetch
+    Fetch — Downloads remote changes without integrating them.
+
+    git pull
+    Pull — Fetches and integrates remote changes.
+
+    git push
+    Push — Uploads local commits to a remote repository.
+
+    git push -u origin <branch-name>
+    Push Upstream — Pushes a branch and sets its tracking branch.
+
+    git push --force-with-lease
+    Force Push With Lease — Safely checks remote changes before rewriting history.
+
+
+    UNDOING & RESTORING CHANGES
+    --------------------------------------------------
+    git restore <filename>
+    Restore — Discards unstaged changes to a file.
+
+    git restore --staged <filename>
+    Restore Staged — Removes a file from staging.
+
+    git reset HEAD~1
+    Reset — Undoes the latest commit but keeps changes unstaged.
+
+    git reset --soft HEAD~1
+    Soft Reset — Undoes the latest commit but keeps changes staged.
+
+    git reset --hard HEAD~1
+    Hard Reset — Deletes the latest commit and discards its changes.
+
+    git revert <commit-hash>
+    Revert — Creates a new commit reversing an earlier commit.
+
+    git clean -n
+    Clean Dry Run — Previews untracked files that would be deleted.
+
+    git clean -fd
+    Clean Force Directories — Deletes untracked files and directories.
+
+
+    INSPECTING CHANGES
+    --------------------------------------------------
+    git diff
+    Difference — Shows unstaged changes.
+
+    git diff --staged
+    Staged Difference — Shows staged changes.
+
+    git diff <branch-1> <branch-2>
+    Branch Difference — Compares two branches.
+
+    git show <commit-hash>
+    Show — Displays details about a specific commit.
+
+    git blame <filename>
+    Blame — Shows who last modified each line.
+
+    git grep "<search-term>"
+    Global Regular Expression Print — Searches tracked files for text.
+
+
+    STASHING
+    --------------------------------------------------
+    git stash
+    Stash — Temporarily saves uncommitted changes.
+
+    git stash pop
+    Stash Pop — Restores the latest stash and removes it from the stash list.
+
+    git stash list
+    Stash List — Displays saved stashes.
+
+    git stash apply
+    Stash Apply — Restores a stash without deleting it.
+
+    git stash drop
+    Stash Drop — Deletes a saved stash.
+
+
+    ADVANCED GIT
+    --------------------------------------------------
+    git cherry-pick <commit-hash>
+    Cherry Pick — Applies a specific commit to your current branch.
+
+    git rebase <branch-name>
+    Rebase — Reapplies commits on top of another branch.
+
+    git rebase -i HEAD~3
+    Interactive Rebase — Edits, reorders, combines, or removes recent commits.
+
+    git tag
+    Tag — Lists repository tags.
+
+    git tag v1.0.0
+    Create Tag — Labels a specific commit.
+
+    git push origin v1.0.0
+    Push Tag — Uploads a tag to a remote repository.
+
+    git reflog
+    Reference Log — Tracks recent movements of HEAD and branch references.
+
+    git bisect start
+    Binary Search — Starts a process to identify which commit introduced a bug.
+
+
+    COMMON WORKFLOWS
+    --------------------------------------------------
+
+    1. STARTING A NEW PROJECT
+
+    git init
+    git add .
+    git commit -m "Initial commit"
+
+
+    2. CLONING A PROJECT
+
+    git clone <repository-url>
+    cd <repository-name>
+
+
+    3. SAVING YOUR WORK
+
+    git status
+    git add .
+    git commit -m "Describe your changes"
+    git push
+
+
+    4. STARTING A NEW FEATURE
+
+    git switch main
+    git pull
+    git switch -c feature/my-feature
+
+
+    5. FINISHING A FEATURE
+
+    git add .
+    git commit -m "Add my feature"
+    git push -u origin feature/my-feature
+
+
+    6. UPDATING YOUR LOCAL PROJECT
+
+    git switch main
+    git pull
+
+
+    7. CHECKING WHAT CHANGED
+
+    git status
+    git diff
+    git diff --staged
+    git log --oneline -10
+
+
+    8. UNDOING YOUR LATEST COMMIT
+
+    git reset --soft HEAD~1
+
+
+    ==================================================
+    ACRONYMS & TERMINOLOGY
+    ==================================================
+
+    CLI  — Command-Line Interface
+    SHA  — Secure Hash Algorithm
+    URL  — Uniform Resource Locator
+    VCS  — Version Control System
+    SCM  — Source Code Management
+    SSH  — Secure Shell
+    HTTPS — Hypertext Transfer Protocol Secure
+
+    Git  — Not an acronym; name of the version control system.
+    HEAD — Reference to your current commit.
+    origin — Conventional name for a remote repository.
+    main — Conventional name for the primary branch.
+    Commit — A recorded snapshot of changes.
+    Staging — Preparing changes for a commit.
+    Merge — Combining branch histories.
+    Rebase — Reapplying commits onto another base.
+    Fork — Your own server-side copy of a repository.
+    Pull Request — A proposal to merge changes into a branch.
+
+
+    ==================================================
+    END OF REFERENCE
+    ==================================================

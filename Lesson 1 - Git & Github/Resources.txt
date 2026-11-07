@@ -1,0 +1,4 @@
+This list was generated using AI but the official git handbook is:
+https://https://git-scm.com/book/en/v2
+If you wanna see real documentation for git and GITHUB
+

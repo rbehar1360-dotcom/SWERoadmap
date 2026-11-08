@@ -1,0 +1,44 @@
+The skills gone over in this lesson are:
+    comments
+    print() statements
+    variables
+    if / else if / else statements
+    for loops
+    while loops
+
+
+Comments are a way to leave little notes inside your code.
+    Syntax:
+        # comment goes here
+    Syntax for multi-line comments:
+        """
+        comment goes here
+        """
+
+print() statements are a way to print stuff out to console:
+    Syntax:
+        print(stuff you wanna print here.)
+
+variables are boxes you can store data in:
+    Syntax:
+        num = 5
+
+if statements are a way to add selection to your code:
+    Syntax:
+        if boolean expression:
+            stuff that runs if expression is true
+         elif other boolean expression: 
+            stuff that runs if 1st expression was false and 2nd one was true
+         else: 
+            stuff that runs if both conditions aren't true
+        
+    
+for loops are a way to repeat code x amount of times:
+    Syntax:
+        for i in range(x amount)
+
+while loops are a way to repeat code an unknown amount of times:
+    Syntax:
+        while boolean expression:
+            stuff that runs while its true, seemingly an infinite amount of time
+        

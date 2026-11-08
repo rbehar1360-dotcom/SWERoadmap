@@ -1,3 +1,7 @@
+The skills gone over today are:
+    git CLI
+    gitHub
+
 Here is a list of git commands that seem to be important
 and a rudementary description of each:
     ==================================================
